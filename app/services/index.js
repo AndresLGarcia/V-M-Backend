@@ -13,9 +13,9 @@ async function getAcronym(acronym) {
   return acronymData;
 }
 
-async function searchAcronym(acronym) {
+async function searchAcronym(acronym,methodo='sf') {
   try {
-    const url = `http://www.nactem.ac.uk/software/acromine/dictionary.py?sf=${acronym}`;
+    const url = `http://www.nactem.ac.uk/software/acromine/dictionary.py?${methodo}=${acronym}`;
     const response = await axios.get(url);
     const data = response.data[0]
       ? response.data[0].lfs.map((val) => {

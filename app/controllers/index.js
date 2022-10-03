@@ -1,6 +1,7 @@
 const { query } = require("express");
 const service = require("../services");
 
+
 const getAll = async (req, res, next) => {
   try {
     const data = await service.getAll();
